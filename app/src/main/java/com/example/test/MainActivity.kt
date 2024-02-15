@@ -112,14 +112,28 @@ fun MainScreen() {
         ) {
             Icon(imageVector = Icons.Default.Add, contentDescription = null)
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Show Weather Info", fontWeight = FontWeight.Bold)
+            Text(text = "Add to datastore", fontWeight = FontWeight.Bold)
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(60.dp),
+            onClick = {
+
+            }
+        ) {
+            Icon(imageVector = Icons.Default.Add, contentDescription = null)
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(text = "Show Weather Info", fontWeight = FontWeight.Bold)
+        }
+        Spacer(modifier = Modifier.height(20.dp))
 
         Text(text = details, fontSize = 16.sp, fontWeight = FontWeight.Bold)
     }
+
 }
 
 data class City(val name: String, val temperature: Int, val wind: String, val description: String)
