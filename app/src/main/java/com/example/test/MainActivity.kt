@@ -51,7 +51,7 @@ fun MainScreen() {
     val description = selectedCity.description
 
     val details by userStore.getDetails.collectAsState(initial = "")
-
+    var fetchedDetails by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -122,7 +122,7 @@ fun MainScreen() {
                 .fillMaxWidth()
                 .height(60.dp),
             onClick = {
-
+                fetchedDetails = details
             }
         ) {
             Icon(imageVector = Icons.Default.Add, contentDescription = null)
@@ -131,7 +131,7 @@ fun MainScreen() {
         }
         Spacer(modifier = Modifier.height(20.dp))
 
-        Text(text = details, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+        Text(text = fetchedDetails, fontSize = 16.sp, fontWeight = FontWeight.Bold)
     }
 
 }
